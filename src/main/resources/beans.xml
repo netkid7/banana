@@ -5,4 +5,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	<context:component-scan base-package="com.brighten.banana.todo" />
+	
+	<bean id="knight" class="com.brighten.banana.todo.knight.BraveKnight">
+		<constructor-arg ref="quest"/>
+	</bean>
+	
+	<bean id="quest" class="com.brighten.banana.todo.knight.SlayDragonQuest"/>
 </beans>

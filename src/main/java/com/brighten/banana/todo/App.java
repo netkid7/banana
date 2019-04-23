@@ -3,6 +3,7 @@ package com.brighten.banana.todo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.brighten.banana.todo.knight.Knight;
 import com.brighten.banana.todo.service.GreetingMessageService;
 
 /**
@@ -19,5 +20,8 @@ public class App
         
         GreetingMessageService greetingMessageService = context.getBean("greetingMessageServiceImpl", GreetingMessageService.class);
         System.out.println(greetingMessageService.greetUser());
+        
+        Knight knight = (Knight)context.getBean("knight");
+        knight.embarkOnQuest();
     }
 }
