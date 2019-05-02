@@ -1,6 +1,7 @@
 package com.brighten.banana.todo;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.brighten.banana.todo.knight.Knight;
@@ -23,5 +24,7 @@ public class App {
 
 		Knight knight = (Knight) context.getBean("knight");
 		knight.embarkOnQuest();
+
+		((AbstractApplicationContext)context).close();
 	}
 }
